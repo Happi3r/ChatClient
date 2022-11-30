@@ -28,6 +28,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="0">
                     <Button Click="JoinRoomBtnClick" Style="{DynamicResource MaterialDesignFlatButton}" Content="{md:PackIcon Kind=PersonMultiplePlus}"></Button>
+                    <Button Click="ChangeUsernameBtnClick" Style="{DynamicResource MaterialDesignFlatButton}" Content="{md:PackIcon Kind=Rename}"></Button>
                 </StackPanel>
                 <Grid Grid.Row="1" Background="Black"></Grid>
                 <ListView Grid.Row="2" ItemsSource="{Binding ChatRooms}">

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const util = require("../modules/Util");
 const User = require("../schema/User");
 
-const authUtil = require("../middlewares/auth");
+const authUtil = require("../middlewares/auth").checkToken;
 
 const {
   EMPTY_INFO: { USER_ID, USER_PASSWORD, USERNAME },
@@ -94,6 +94,8 @@ router.post("/signIn", async (req, res) => {
   }
 });
 
-// router.post("/changeUsername", authUtil, (req, res) => {});
+router.post("/changeUsername", authUtil, async (req, res) => {
+  return res.json(util.success("test", "test", "test"));
+});
 
 module.exports = router;

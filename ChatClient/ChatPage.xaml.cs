@@ -1,9 +1,12 @@
 ﻿using ChatClient.Models;
+using RestSharp;
+using SocketIOClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,11 +44,17 @@ namespace ChatClient
         {
             InitializeComponent();
             DataContext = this;
+            App.ConnectSocketIO();
         }
 
         private void JoinRoomBtnClick(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ChangeUsernameBtnClick(object sender, RoutedEventArgs e)
+        {
+            new ChangeUsernameDialog().ShowDialog();
         }
     }
 }
