@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ChatClient.Models
 {
-    public class ResponseModel<T>
+    public class ChatLogModel
     {
-        public string Code { get; set; }
+        public string UserId { get; set; }
+        public string Username { get; set; }
         public string Message { get; set; }
-        public T? Options { get; set; }
+        public DateTime SendTime { get; set; }
     }
 }

@@ -22,22 +22,25 @@
         </Grid>
         
         <Grid Grid.Row="1" Background="Black"></Grid>
-        <ItemsControl Grid.Row="2" ItemsSource="{Binding Messages}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid HorizontalAlignment="Stretch">
-                        <Grid MaxWidth="200" HorizontalAlignment="{Binding MessageAlignment}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0" FontSize="10" Content="{Binding Username}"></Label>
-                            <Label Grid.Row="1" FontSize="12" Content="{Binding Message}"></Label>
+        <ScrollViewer Grid.Row="2">
+            <ItemsControl ItemsSource="{Binding Messages}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid MaxWidth="200" HorizontalAlignment="{Binding MessageAlignment}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" FontSize="10" Content="{Binding username}"></Label>
+                                <Label Grid.Row="1" FontSize="12" Content="{Binding message}"></Label>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>

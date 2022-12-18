@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatClient
+namespace ChatClient.Models
 {
     public class ChangeUsernameModel
     {
         public string Username { get; set; }
-
-        public ChangeUsernameModel(string username) {
+        public ChangeUsernameModel(string username)
+        {
             Username = username;
         }
     }

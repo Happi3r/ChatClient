@@ -15,6 +15,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800" MinWidth="300" MinHeight="500">
     <Grid>
+        <md:Snackbar VerticalAlignment="Top"></md:Snackbar>
         <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

@@ -20,6 +20,6 @@
             <TextBlock FontSize="18">새 사용자 이름</TextBlock>
             <TextBox x:Name="NewUsernameBox"></TextBox>
         </StackPanel>
-        <Button Click="ChangeBtnClick" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsDefault="True" Margin="24">변경</Button>
+        <Button Click="ChangeBtnClick" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsDefault="True" Margin="24">변경</Button>       
     </Grid>
 </Window>

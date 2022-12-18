@@ -43,7 +43,7 @@
             </Grid>
             <Grid Grid.Column="1" Background="Black"></Grid>
             <Grid Grid.Column="2" x:Name="ChatRoomPlaceholder">
-                
+                <local:ChatRoomControl></local:ChatRoomControl>
             </Grid>
         </Grid>
     </Grid>

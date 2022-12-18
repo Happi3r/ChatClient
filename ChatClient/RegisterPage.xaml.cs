@@ -47,7 +47,7 @@ namespace ChatClient
                 MessageBox.Show("비밀번호가 일치하지 않습니다.");
             }
 
-            SignUpModel model = new SignUpModel(id, password, username);
+            SignupModel model = new SignupModel(id, password, username);
             RestRequest request = new RestRequest("http://localhost:3000/user/signUp", Method.Post);
             request.AddBody(model);
 

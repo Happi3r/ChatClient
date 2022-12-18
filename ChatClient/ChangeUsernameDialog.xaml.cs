@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using ChatClient.Models;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;

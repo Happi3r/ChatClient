@@ -32,11 +32,35 @@ namespace ChatClient
         {
             InitializeComponent();
             DataContext = this;
+
+            App.SocketClient.On("init", (e) =>
+            {
+                e.GetValue<List<ChatMessage>>().ForEach((message) =>
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        _messages.Add(message);
+                    });
+                });
+            });
+            App.SocketClient.On("message", (e) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    _messages.Add(e.GetValue<ChatMessage>());
+                });
+                
+            });
+            App.ConnectSocketIO();
         }
 
         private void SendBtnClick(object sender, RoutedEventArgs e)
         {
-
+            if (MessageInputTextBox.Text != "")
+            {
+                App.SocketClient.EmitAsync("message", MessageInputTextBox.Text);
+            }
+            MessageInputTextBox.Text = "";
         }
 
         private void AddPersonBtnClick(object sender, RoutedEventArgs e)
