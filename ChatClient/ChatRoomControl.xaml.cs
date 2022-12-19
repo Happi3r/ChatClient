@@ -35,12 +35,9 @@ namespace ChatClient
 
             App.SocketClient.On("init", (e) =>
             {
-                e.GetValue<List<ChatMessage>>().ForEach((message) =>
+                Dispatcher.Invoke(() =>
                 {
-                    Dispatcher.Invoke(() =>
-                    {
-                        _messages.Add(message);
-                    });
+                    e.GetValue<List<ChatMessage>>().ForEach(_messages.Add);
                 });
             });
             App.SocketClient.On("message", (e) =>
@@ -49,9 +46,9 @@ namespace ChatClient
                 {
                     _messages.Add(e.GetValue<ChatMessage>());
                 });
-                
             });
             App.ConnectSocketIO();
+            scrollViewer.ScrollToEnd();
         }
 
         private void SendBtnClick(object sender, RoutedEventArgs e)
@@ -61,6 +58,7 @@ namespace ChatClient
                 App.SocketClient.EmitAsync("message", MessageInputTextBox.Text);
             }
             MessageInputTextBox.Text = "";
+            scrollViewer.ScrollToEnd();
         }
 
         private void AddPersonBtnClick(object sender, RoutedEventArgs e)

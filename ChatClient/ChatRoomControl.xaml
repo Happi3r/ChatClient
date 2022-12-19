@@ -22,7 +22,7 @@
         </Grid>
         
         <Grid Grid.Row="1" Background="Black"></Grid>
-        <ScrollViewer Grid.Row="2">
+        <ScrollViewer Grid.Row="2" x:Name="scrollViewer">
             <ItemsControl ItemsSource="{Binding Messages}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

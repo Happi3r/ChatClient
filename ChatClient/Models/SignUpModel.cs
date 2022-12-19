@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatClient
+namespace ChatClient.Models
 {
-    public class SignUpModel
+    public class SignupModel
     {
-        public string Id { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
 
-        public SignUpModel(string id, string password, string name)
+        public string Password { get; set; }
+        public SignupModel(string id, string Password, string name)
         {
-            Id = id;
-            Password = password;
-            Name = name;
+            this.id = id;
+            this.Password = Password;
+            this.name = name;
         }
     }
 }
